@@ -1,0 +1,62 @@
+<!-- page 3 -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>Success!</title>
+</head>
+<body>
+      <div id="container">
+        <!-- Mulah Logo -->
+        <img src="mulah.png" alt="Mulah Logo">
+
+        <div id="registration">Success!</div>
+
+        <div id="fillUp">Your registration is successful!</div>
+
+        <div class="card" id="displayedData">
+            <div class="name-section">MULAH MEMBERSHIP</div>
+            <div class="name-section">${name}</div>
+            <div class="phoneNumber"><strong>Phone Number:</strong> ${phoneNumber}</div>
+            <div class="email"><strong>Email:</strong> ${email}</div>
+            <div class="birthday"><strong>Birthday:</strong> ${birthday}</div>
+        </div>
+
+        <button onclick="redirectToMulahRewards()">Visit Mulah Rewards</button>
+
+        <hr>
+
+    </div>
+
+    <div id="poweredBy">Powered by <a href="https://mulahrewards.com/">MulahRewards.com</a></div>
+
+    <!-- Js  -->
+    <script>
+        // Extract query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const birthday = urlParams.get('birthday');
+        const email = urlParams.get('email');
+        const phoneNumber = urlParams.get('phoneNumber');
+
+        // Display the data
+        const displayedData = document.getElementById('displayedData');
+        displayedData.innerHTML = `
+            <div class="Mulah-section">MULAH MEMBERSHIP</div>
+            <div class="name-section">${name}</div>
+            <div class="phoneNumber"><strong>Phone Number:</strong> ${phoneNumber}</div>
+            <div class="email"><strong>Email:</strong> ${email}</div>
+            <div class="birthday"><strong>Birthday:</strong> ${birthday}</div>`;
+
+        // Function to redirect to Mulah Rewards
+        function redirectToMulahRewards() {
+            window.location.href = 'https://www.mulahrewards.com/';
+        }
+    </script>
+
+</body>
+</html>

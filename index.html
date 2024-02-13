@@ -1,0 +1,58 @@
+<!-- page 1 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <div id="container">
+        <!-- Mulah Logo -->
+        <img src="mulah.png" alt="Mulah Logo">
+
+        <div id="welcome">Hello,<br>Welcome!</div>
+
+        <div id="loyaltyPoints">Check Your Loyalty Points & Rewards</div>
+
+        <!-- Choose country code -->
+        <select id="countryCode">
+            <option value="60">+60</option>        <!-- Malaysia -->
+            <option value="61">+61</option>        <!-- Thailand -->
+            <option value="65">+65</option>        <!-- Singapore -->
+            <option value="66">+66</option>        <!-- Australia -->
+
+        </select>
+
+        <input type="tel" id="phoneNumber" placeholder="Enter mobile number" pattern="\d{10}" required>
+
+        <br>
+
+        <button onclick="checkLoyaltyPoints()">Check Loyalty Points</button>
+
+        <hr>
+
+    </div>
+
+    <div id="poweredBy">Powered by <a href="https://mulahrewards.com/">MulahRewards.com</a></div>
+
+    <!-- Js  -->
+    <script>
+        function checkLoyaltyPoints() {
+            const phoneNumberInput = document.getElementById('phoneNumber');
+            const phoneNumber = phoneNumberInput.value.trim();
+            const validPhoneNumber = '60173527250';
+
+            if (phoneNumber === validPhoneNumber) {
+                window.location.href = `index2.html?phoneNumber=${encodeURIComponent(phoneNumber)}`;
+            } else {
+                alert('Invalid Number. Try this: 60173527250.');
+            }
+        }
+    </script>
+
+</body>
+</html>
